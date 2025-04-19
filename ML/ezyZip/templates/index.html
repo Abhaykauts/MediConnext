@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MediCheck</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #f7f9fb;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      .myimg {
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 50%;
+      }
+
+      .form-box {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        margin-top: 40px;
+      }
+
+      .result-box {
+        background: #ffffff;
+        padding: 25px;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      }
+
+      .result-box h4 {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <a class="navbar-brand" href="#">MediConnext</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="container">
+      <div class="form-box">
+        <form action="/predict" method="post">
+          <div class="mb-3">
+            <label for="symptoms" class="form-label">Enter your symptoms</label>
+            <input type="text" class="form-control" id="symptoms" name="symptoms"
+                   placeholder="E.g., headache, nausea, fatigue">
+          </div>
+
+          <button type="button" id="startSpeechRecognition" class="btn btn-outline-primary mb-3">
+            🎤 Use Speech
+          </button>
+          <div id="transcription" class="mb-3 text-muted"></div>
+
+          {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+          {% endif %}
+
+          <button type="submit" class="btn btn-danger w-100">Predict</button>
+        </form>
+      </div>
+
+      {% if predicted_disease %}
+      <!-- Results Section -->
+      <div class="result-box">
+        <h4>Predicted Disease:</h4>
+        <p><strong>{{ predicted_disease }}</strong></p>
+
+        <h4>Description:</h4>
+        <p>{{ dis_des }}</p>
+
+        <h4>Precautions:</h4>
+        <ul>
+          {% for i in my_precautions %}
+            <li>{{ i }}</li>
+          {% endfor %}
+        </ul>
+
+        <h4>Medications:</h4>
+        <ul>
+          {% for i in medications %}
+            <li>{{ i }}</li>
+          {% endfor %}
+        </ul>
+
+        <h4>Workouts:</h4>
+        <ul>
+          {% for i in workout %}
+            <li>{{ i }}</li>
+          {% endfor %}
+        </ul>
+
+        <h4>Diets:</h4>
+        <ul>
+          {% for i in my_diet %}
+            <li>{{ i }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      const startSpeechRecognitionButton = document.getElementById('startSpeechRecognition');
+      const transcriptionDiv = document.getElementById('transcription');
+
+      startSpeechRecognitionButton.addEventListener('click', () => {
+        const recognition = new webkitSpeechRecognition();
+        recognition.lang = 'en-US';
+
+        recognition.onresult = function (event) {
+          const result = event.results[0][0].transcript;
+          transcriptionDiv.textContent = result;
+          document.getElementById('symptoms').value = result;
+        };
+
+        recognition.onend = function () {
+          console.log('Speech recognition ended.');
+        };
+
+        recognition.start();
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

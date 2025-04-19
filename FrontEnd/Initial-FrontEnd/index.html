@@ -1,15 +1,23 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediConnext</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MediConnext</title>
+      
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Secular+One&display=swap" rel="stylesheet" />
+      
+        <!-- Your CSS -->
+        <link rel="stylesheet" href="style.css" />
+      
+        <!-- Your Firebase JS file (module) -->
+        <script type="module" src="firebase-newsletter.js" defer></script>
+      </head>
+      
 <body>
 
   <!-- Navbar Start -->
@@ -25,9 +33,28 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
       </div>
-      <button class="cta-btn">Login/SignUp</button>
+      <!-- <button class="cta-btn">Login/SignUp</button> -->
+      <!-- Trigger Button -->
+<button class="cta-btn"id="authBtn">Login / Signup</button>
 
-      <button class="cta-btn">Download App</button>
+<!-- Modal -->
+<div class="modal" id="authModal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Welcome to MediConnext</h2>
+    
+    <div class="auth-options">
+      <button class="google-btn">Continue with Google</button>
+      <p>or</p>
+      <input type="tel" placeholder="Enter phone number" />
+      <button class="continue-btn">Continue</button>
+    </div>
+    
+    <p class="toggle-text">Don't have an account? <span id="toggleMode">Sign Up</span></p>
+  </div>
+</div>
+
+      <button class="cta-btn" onclick="document.getElementById('download').scrollIntoView({ behavior: 'smooth' });">Download App</button>
     </div>
   </nav>
   <!-- Navbar End -->
@@ -79,12 +106,165 @@
         <div class="feature-element">
             <img src="feature-4.jpg" alt="feature-4">
             <h3>Get Alternate Medicine</h3>
-            <p>Discover Safe Alternatives
+            <p id="how-it-works">Discover Safe Alternatives
                 Get AI-powered suggestions for substitute medicines based on active ingredients and suitability scoring.
-            </p>
+            </p >
         </div>
     </div>
   </div>
+<!-- working section  -->
+ <div class="work-heading" >
+    <h1>How Mediconnext Works</h1>
+    <div class="para">
+        <p>Easily find medicine availability at nearby pharmacies. Just enter the medication name or active ingredient, and MediConnext will display real-time availability and suggest alternative options.</p>
+    </div>
+ </div>
+<div class="container1">
+    <div class="left-section">
+      <img src="mobile1.png" alt="App Display" class="mockup" />
+    </div>
+    <div class="right-section">
+      <div class="feature">
+        <div class="icon">🔍</div>
+        <div class="text">
+          <h3>Search Your Medicine</h3>
+          <p>Enter the medicine name or salt. MediConnext scans real-time pharmacy databases to find matching results.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon">📍</div>
+        <div class="text">
+          <h3>Locate Nearby Stores</h3>
+          <p>Available medicines are shown on an interactive map with store details, stock status, and distance.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon">📈</div>
+        <div class="text">
+          <h3>Compare & Choose</h3>
+          <p>Compare prices across stores or explore AI-recommended alternatives based on active ingredients and ideal score.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="tagline">
+    <h1>Find. Choose. Heal</h1>
+</div>
+<div class="benefits">
+    <div class="feat">
+        <img src="feat1.png" alt="feat1">
+       <h3> Real Time Access</h3>
+    </div>
+    <div class="feat">
+        <img src="feat2.png" alt="feat2">
+        <h3> AI-Powered Suggestions</h3>
+    </div>
+    <div class="feat">
+        <img src="feat3.png" alt="feat3">
+        <h3>Easy to Use</h3>
+    </div>
+    <div class="feat">
+        <img src="feat4.png" alt="feat4">
+        <h3>Verified Pharmacies</h3>
+    </div>
+</div>
+<!-- user-experience-section  -->
+
+<section class="testimonial-section">
+    <div class="testimonial-container">
+        <h2>User Experiences</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p>“I was amazed by how quickly I found the medication I needed, and the alternative suggestions were incredibly helpful. Thank you, MediConnext!”</p>
+                <div class="user">Abhay, 22</div>
+            </div>
+            <div class="testimonial">
+                <p>“MediConnext made it so easy for me to locate the medicines I required, and the expert advice ensured I made an informed decision. Highly recommended!”</p>
+                <div class="user">Aditya, 21</div>
+            </div>
+            <div class="testimonial">
+                <p>“I'm grateful for the support I received from MediConnext. The platform is a game-changer for anyone seeking reliable and accessible medication options.”</p>
+                <div class="user">Arnav, 50</div>
+            </div>
+            <div class="testimonial">
+                <p>“MediConnext change my and my family life thanks for such a reliable application ”</p>
+                <div class="user">Dhariya, 45</div>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+<!-- app section  -->
+<div class="container" id="download">
+    <div class="mockup">
+      <img src="MObile-logo.png" alt="Mobile App Mockup">
+    </div>
+    <div class="content" >
+      <h1>Join us on mobile!</h1>
+      <p>Download the MediConnext app and find your medicines anytime, anywhere — faster than ever.</p>
+      <div class="qr-buttons">
+        <a href="#"><img class="qr" src="qr-code.png" alt="QR Code"></a>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+        <a href="#"><img src="app-store.jpeg" alt="App Store"></a>  
+      </div>
+    </div>
+  </div>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2>Mediconnext</h2>
+        <p>For our latest health tips and tricks subscribe below</p>
+        <form id="newsletterForm">
+          <input type="email" id="email" placeholder="Email *" required>
+          <div class="subscribe-box">
+            <input type="checkbox" id="subscribeCheckbox">
+            <label for="subscribeCheckbox">Yes, subscribe me to your newsletter</label>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+        <p class="footer-copy">&copy; 2035 by MediConnext<br>Powered and secured by <a href="#">Love</a></p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>  
+            <li><a href="#features">About</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Social</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>LinkedIn</li>
+            <li>Instagram</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 id="contact">Contact</h3>
+          <p>123-456-7890<br>info@mediconnext.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
   <script src="script.js"></script>
+  
 </body>
 </html>
