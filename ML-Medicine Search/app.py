@@ -2,8 +2,7 @@ import pandas as pd
 import google.generativeai as genai
 from flask import Flask, render_template, request
 
-# 🔑 Hardcode Gemini API key
-genai.configure(api_key="your-real-gemini-api-key")  # <-- Replace with actual key
+
 
 app = Flask(__name__)
 
