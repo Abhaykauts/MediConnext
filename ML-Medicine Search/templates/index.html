@@ -1,132 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediConnext</title>
-     <!-- Google Fonts -->
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Secular+One&display=swap" rel="stylesheet" />
-    <style>
-        .secular-one-regular {
-            font-family: "Secular One", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-          }
-          
-          body {
-            font-family: "Secular One", sans-serif;
-            background-color: #fdf8ed;
-          }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediConnext</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Secular+One&display=swap" rel="stylesheet"/>
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+    body {
+      font-family: "Secular One", sans-serif;
+      height: 100vh;
+      display: flex;
+    }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color:rgb(6, 208, 107);
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #2b6cb0, #4299e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .left-section {
+      width: 50%;
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fdf8ed;
+    }
 
-        .search-container {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+    .right-section {
+      width: 50%;
+      background-image: url("hero-image.jpg");
+      background-size: cover;
+      background-position: 40% 100%;
+      background-repeat: no-repeat;
+    }
 
-        .search-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-        input[type="text"] {
-            flex: 1;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color:  rgb(9 55 31);
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      background:  rgb(9 55 31);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-        }
+    .search-container {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-        button {
-            padding: 1rem 2rem;
-            background: #4299e1;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    .search-form {
+      display: flex;
+      gap: 1rem;
+    }
 
-        button:hover {
-            background: #2b6cb0;
-            transform: translateY(-1px);
-        }
+    input[type="text"] {
+      flex: 1;
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
 
-        .tagline {
-            text-align: center;
-            color: #4a5568;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: rgb(9 55 31);
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    }
 
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            color: #718096;
-            font-size: 0.9rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.8);
-        }
-    </style>
+    button {
+      padding: 1rem 2rem;
+      background: rgb(9 55 31);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: rgb(9 55 31);
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">Mediconnext</div>
-        </header>
+  <div class="left-section">
+    <header class="header">
+      <div class="logo">Mediconnext</div>
+    </header>
 
-        <div class="search-container">
-            <form method="POST" action="/search" class="search-form">
-                <input type="text" 
-                       name="medicine_name" 
-                       placeholder="Enter drug name, brand, or composition..."
-                       required>
-                <button type="submit">Search</button>
-            </form>
-        </div>
-
-        <footer class="footer">
-            <p>© 2025 Mediconnext Technologies</p>
-        </footer>
+    <div class="search-container">
+      <form method="POST" action="/search" class="search-form">
+        <input
+          type="text"
+          name="medicine_name"
+          placeholder="Enter drug name, brand, or composition..."
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
+  </div>
+
+  <div class="right-section"></div>
 </body>
 </html>
