@@ -76,16 +76,16 @@ MediConneXt is a smart, user-friendly mobile application designed to provide:
 ✔️ **Improved healthcare accessibility** in remote regions  
 
 ---
-🚀🚀Comparsion With Competitors🔥🔥
-Feature                            |MediConnext | Tata 1mg | PharmEasy | NetMeds  | Google Maps
-Real-time Medicine Availability    | ✅ Yes     | ❌ No    | ❌ No     | ❌ No   | ❌ No
-Local Pharmacy Integration         | ✅ Yes     | ❌ No    | ❌ No     | ❌ No   | ✅ Partial
-Google Maps Store Locator          | ✅ Yes     | ✅ Yes   | ✅ Yes    | ✅ Yes  | ✅ Yes
-AI-based Alternative Suggestions   | ✅ Yes     | ⚠️Limited| ❌ No     |⚠️Limited| ❌ No
-Compare Prices from Nearby Stores  | ✅ Yes     | ❌ No    | ❌ No     | ❌ No   | ❌ No
-Platform Type                      | Web + App   | App/Web  | App/Web    | App/Web | Web/App
-Focus Area                         | Accessibility| Delivery | Delivery  | Delivery| Location Listing
-                                   | Local Smart Search 
+| Feature                              | MediConnext         | Tata 1mg         | PharmEasy        | NetMeds          | Google Maps      |
+|--------------------------------------|---------------------|------------------|------------------|------------------|------------------|
+| Real-time Medicine Availability      | ✅ Yes              | ❌ No            | ❌ No            | ❌ No            | ❌ No            |
+| Local Pharmacy Integration           | ✅ Yes              | ❌ No            | ❌ No            | ❌ No            | ✅ Partial       |
+| Google Maps Store Locator            | ✅ Yes              | ✅ Yes           | ✅ Yes           | ✅ Yes           | ✅ Yes           |
+| AI-based Alternative Suggestions     | ✅ Yes              | ⚠️ Limited       | ❌ No            | ⚠️ Limited       | ❌ No            |
+| Compare Prices from Nearby Stores    | ✅ Yes              | ❌ No            | ❌ No            | ❌ No            | ❌ No            |
+| Platform Type                        | Web + App          | App/Web          | App/Web          | App/Web          | Web/App          |
+| Focus Area                           | Accessibility, Local Smart Search | Delivery         | Delivery         | Delivery         | Location Listing |
+
 
 ## 🔭 **Vision**
 
